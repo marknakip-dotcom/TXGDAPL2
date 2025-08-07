@@ -1,0 +1,42 @@
+diff --git a//dev/null b/index.html
+index 0000000000000000000000000000000000000000..6488c7d94d6cb15fdbcad413e7e9bcd93801c50a 100644
+--- a//dev/null
++++ b/index.html
+@@ -0,0 +1,37 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++  <meta charset="UTF-8" />
++  <title>Map Avatar Demo</title>
++  <link rel="stylesheet" href="style.css" />
++  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="" crossorigin=""/>
++</head>
++<body>
++  <div id="map"></div>
++  <button id="modeToggle">Ручной режим</button>
++    <div id="joystick-zone" class="hidden"></div>
++    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="" crossorigin=""></script>
++    <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.9.1/dist/nipplejs.min.js"></script>
++    <script src="config.js"></script>
++    <script>
++      if (typeof window.OSM_TILE_URL === 'undefined') {
++        const warn = document.createElement('div');
++        warn.textContent = 'Отсутствует config.js — скопируйте config.example.js в config.js и заполните ключи.';
++        warn.style.position = 'absolute';
++        warn.style.top = '0';
++        warn.style.left = '0';
++        warn.style.right = '0';
++        warn.style.background = '#ffcdd2';
++        warn.style.color = '#b71c1c';
++        warn.style.textAlign = 'center';
++        warn.style.padding = '10px';
++        warn.style.zIndex = '1000';
++        document.body.prepend(warn);
++      } else {
++        const script = document.createElement('script');
++        script.src = 'main.js';
++        document.body.appendChild(script);
++      }
++    </script>
++  </body>
++  </html>
